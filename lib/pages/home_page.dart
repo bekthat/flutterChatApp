@@ -1,3 +1,4 @@
+import 'package:chat/components/user_tile.dart';
 import 'package:chat/services/auth/auth_service.dart';
 import 'package:chat/components/my_drawer.dart';
 import 'package:chat/services/chat/chat_service.dart';
@@ -55,6 +56,15 @@ class HomePage extends StatelessWidget {
   //build individual list tile for user
   Widget _buildUserListItem(
       Map<String, dynamic> userData, BuildContext context) {
-    return UserTile();
+    return UserTile(
+      text: userData["email"],
+      onTap: () {
+        //tapped on a user -> go to chat page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ChatPage()),
+        );
+      },
+    );
   }
 }
