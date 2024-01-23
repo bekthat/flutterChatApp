@@ -1,4 +1,5 @@
 import 'package:chat/components/user_tile.dart';
+import 'package:chat/pages/chat_pages.dart';
 import 'package:chat/services/auth/auth_service.dart';
 import 'package:chat/components/my_drawer.dart';
 import 'package:chat/services/chat/chat_service.dart';
@@ -46,7 +47,7 @@ class HomePage extends StatelessWidget {
         //return   list view
         return ListView(
           children: snapshot.data!
-              .map<Widget>((userData) => _buildUserListItem)
+              .map<Widget>((userData) => _buildUserListItem(userData, context))
               .toList(),
         );
       },
@@ -62,7 +63,11 @@ class HomePage extends StatelessWidget {
         //tapped on a user -> go to chat page
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ChatPage()),
+          MaterialPageRoute(
+            builder: (context) => ChatPage(
+              receiverEmail: userData["email"],
+            ),
+          ),
         );
       },
     );
