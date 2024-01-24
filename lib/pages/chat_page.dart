@@ -71,7 +71,8 @@ class _ChatPageState extends State<ChatPage> {
     //if there is something inside the textfiled
     if (_messageController.text.isNotEmpty) {
       //send the message
-      await _chatService.sendMessage(widget.receiverID, _messageController);
+      await _chatService.sendMessage(
+          widget.receiverID, _messageController.text);
       //clear text controller
       _messageController.clear();
     }
@@ -105,12 +106,12 @@ class _ChatPageState extends State<ChatPage> {
         builder: (context, snapshot) {
           //error
           if (snapshot.hasError) {
-            return const Text("Error");
+            return const Text("Ошибка");
           }
 
           //loading
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Text("Loading..");
+            return const Text("Загрузка..");
           }
 
           //return list view
@@ -156,7 +157,7 @@ class _ChatPageState extends State<ChatPage> {
           Expanded(
             child: MyTextFiled(
               controller: _messageController,
-              hintText: "Type a message",
+              hintText: "Введите сообщение",
               obscureText: false,
               focusNode: myFocusNode,
             ),

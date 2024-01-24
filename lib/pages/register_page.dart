@@ -17,12 +17,13 @@ class RegisterPage extends StatelessWidget {
 
   void register(BuildContext context) {
     //get auth service
+    // ignore: no_leading_underscores_for_local_identifiers
     final _auth = AuthService();
 
     // password match -> create user
-    if (_pwController == _confirmPwController) {
+    if (_pwController.text == _confirmPwController.text) {
       try {
-        _auth.signInWithEmailPassword(
+        _auth.signUpWithEmailPassword(
             _emailController.text, _pwController.text);
       } catch (e) {
         showDialog(
@@ -37,7 +38,7 @@ class RegisterPage extends StatelessWidget {
       showDialog(
           context: context,
           builder: (context) => const AlertDialog(
-                title: Text("Password don't match"),
+                title: Text("Пароли не совпадают"),
               ));
     }
   }
@@ -59,7 +60,7 @@ class RegisterPage extends StatelessWidget {
 
             //welcome back message
             Text(
-              "Let`s create an account for you",
+              "Создайте аккаунт",
               style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
                 fontSize: 16,
@@ -79,7 +80,7 @@ class RegisterPage extends StatelessWidget {
 
             //pw textfiled
             MyTextFiled(
-              hintText: "Password",
+              hintText: "Пароль",
               obscureText: true,
               controller: _pwController,
             ),
@@ -88,7 +89,7 @@ class RegisterPage extends StatelessWidget {
 
             //confirm pw textfiled
             MyTextFiled(
-              hintText: "Confirm password",
+              hintText: "Подтвердите пароль",
               obscureText: true,
               controller: _confirmPwController,
             ),
@@ -97,7 +98,7 @@ class RegisterPage extends StatelessWidget {
 
             //login button
             MyButton(
-              text: "Register",
+              text: "Регистрация",
               onTap: () => register(context),
             ),
 
@@ -107,13 +108,13 @@ class RegisterPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Already have an account?",
+                Text("У вас есть акканут?",
                     style: TextStyle(
                         color: Theme.of(context).colorScheme.primary)),
                 GestureDetector(
                   onTap: onTap,
                   child: Text(
-                    " Login now",
+                    " Войдите",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.primary,

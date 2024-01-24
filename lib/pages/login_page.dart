@@ -60,7 +60,7 @@ class LoginPage extends StatelessWidget {
 
             //welcome back message
             Text(
-              "Welcome back, you've been missed!",
+              "Добро пожаловать!",
               style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
                 fontSize: 16,
@@ -80,7 +80,7 @@ class LoginPage extends StatelessWidget {
 
             //pw textfiled
             MyTextFiled(
-              hintText: "Password",
+              hintText: "Пароль",
               obscureText: true,
               controller: _pwController,
             ),
@@ -89,7 +89,7 @@ class LoginPage extends StatelessWidget {
 
             //login button
             MyButton(
-              text: "Login",
+              text: "Логин",
               onTap: () => login(context),
             ),
 
@@ -99,13 +99,13 @@ class LoginPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Not a member?",
+                Text("Нет аккаунта?",
                     style: TextStyle(
                         color: Theme.of(context).colorScheme.primary)),
                 GestureDetector(
                   onTap: onTap,
                   child: Text(
-                    " Register now",
+                    " Регистрация",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.primary,

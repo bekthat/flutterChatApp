@@ -32,7 +32,7 @@ class MyDrawer extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 25.0),
                 child: ListTile(
-                  title: const Text("H O M E"),
+                  title: const Text("Главная"),
                   leading: const Icon(Icons.home),
                   onTap: () {
                     //pop the drawer
@@ -44,7 +44,7 @@ class MyDrawer extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 25.0, bottom: 25.0),
                 child: ListTile(
-                  title: const Text("S E T T I N G S"),
+                  title: const Text("Настройки"),
                   leading: const Icon(Icons.settings),
                   onTap: () {
                     //pop the drawer
@@ -66,7 +66,7 @@ class MyDrawer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 25.0),
             child: ListTile(
-              title: const Text("L O G O U T"),
+              title: const Text("Выйти"),
               leading: const Icon(Icons.logout),
               onTap: logout,
             ),
