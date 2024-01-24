@@ -3,7 +3,6 @@ import 'package:chat/pages/chat_pages.dart';
 import 'package:chat/services/auth/auth_service.dart';
 import 'package:chat/components/my_drawer.dart';
 import 'package:chat/services/chat/chat_service.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -62,6 +61,7 @@ class HomePage extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) => ChatPage(
                 receiverEmail: userData["email"],
+                receiverID: userData["uid"],
               ),
             ),
           );
