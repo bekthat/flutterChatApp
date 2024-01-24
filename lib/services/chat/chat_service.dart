@@ -28,7 +28,7 @@ class ChatService {
     final Timestamp timestamp = Timestamp.now();
 
     //create a new message
-
+    
     //construct chat room ID for the two users
 
     //add new message to database
