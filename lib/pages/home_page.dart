@@ -1,5 +1,5 @@
 import 'package:chat/components/user_tile.dart';
-import 'package:chat/pages/chat_pages.dart';
+import 'package:chat/pages/chat_page.dart';
 import 'package:chat/services/auth/auth_service.dart';
 import 'package:chat/components/my_drawer.dart';
 import 'package:chat/services/chat/chat_service.dart';
